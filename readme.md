@@ -1,13 +1,13 @@
 # Test Specification for Senior Backend Python Developer
 Create a GraphQL to-do application (using Flask) that allows users to perform these actions after logging in:
-●Create new item or items
-●Query an item or items
-●Query items based on status or due date
-●Change the status of an item as in-progress or done
-●Change the due date of an item
-●Delete an item
+*Create new item or items
+*Query an item or items
+*Query items based on status or due date
+*Change the status of an item as in-progress or done
+*Change the due date of an item
+*Delete an item
 
-# List of Users (to see users and their passwords!)
+## List of Users (to see users and their passwords!)
 query UserList {
   users {
     success
@@ -21,7 +21,7 @@ query UserList {
 	}
 }
 
-# Register (just in case)
+## Register (just in case)
 mutation Register {
   register(name:"Hamid", username:"hamid",password:"1") {
     success
@@ -36,7 +36,7 @@ mutation Register {
   }
 }
 
-# Login
+## Login
 it return a bearer token that should be used in task queries 
 
 query Login {
@@ -53,7 +53,7 @@ query Login {
   }
 }
 
-# Query an item
+## Query an item
 query Task {
   task(id:"11") {
     success
@@ -69,7 +69,7 @@ query Task {
 	}
 }
 
-# Query items
+## Query items
 query TaskList {
   tasks {
     success
@@ -85,7 +85,7 @@ query TaskList {
 	}
 }
 
-# Query items based on status or due date
+## Query items based on status or due date
 query TaskList {
   tasks(status:TODO,due_date:"2020-01-01") {
     success
@@ -101,7 +101,7 @@ query TaskList {
 	}
 }
 
-# Query items based on status or due date
+## Query items based on status or due date
 query TaskList {
   tasks(due_date:"2020-01-01") {
     success
@@ -117,7 +117,7 @@ query TaskList {
 	}
 }
 
-# Query items based on status or due date
+## Query items based on status or due date
 query TaskList {
   tasks(status:DONE) {
     success
@@ -133,7 +133,7 @@ query TaskList {
 	}
 }
 
-# Create new item
+## Create new item
 mutation CreateTask {
   create_task(task:{title:"Task21",description:"What", due_date:"1-1-2020"}) {
     success
@@ -149,7 +149,7 @@ mutation CreateTask {
   }
 }
 
-# Create new items
+## Create new items
 mutation CreateTasks {
   create_tasks(tasks:[{title:"Task125",description:"1", due_date:"1-1-2020"},
                      {title:"Task126",description:"2", due_date:"1-2-2020"},
@@ -167,7 +167,7 @@ mutation CreateTasks {
   }
 }
 
-# Change the status of an item as in-progress or done
+## Change the status of an item as in-progress or done
 mutation UpdateTaskStatus {
   updateStatus(id:"5", newStatus:DONE) {
     success
@@ -183,7 +183,7 @@ mutation UpdateTaskStatus {
 	}
 }
 
-# Change the due date of an item
+## Change the due date of an item
 mutation UpdateTaskDueDate {
   updateDueDate(id:"5", newDate:"4-4-1994") {
     success
@@ -199,7 +199,7 @@ mutation UpdateTaskDueDate {
 	}
 }
 
-# Delete an item
+## Delete an item
 mutation deleteTask {
   deleteTask(id:"7") {
     success
