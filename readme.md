@@ -8,7 +8,7 @@ Create a GraphQL to-do application (using Flask) that allows users to perform th
 *Delete an item
 
 ## List of Users (to see users and their passwords!)
-```
+```graphql
 query UserList {
   users {
     success
